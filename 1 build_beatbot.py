@@ -1,6 +1,6 @@
 # Build and run a BeatBot here:
 # First select your microphone.
-device = 0 # select the microphone. Use sd.query_devices() to see options
+device = 0  # select the microphone. Use sd.query_devices() to see options
 print(sd.query_devices())
 # Record noise samples and train a model. (~100 samples per noise gives reasonable results.) Save the resulting audio data and model, if you wish:
 my_model, my_recordings = build_beatbot(device=device)
