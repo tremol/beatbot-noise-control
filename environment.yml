@@ -1,131 +1,121 @@
+# key dependencies
+
 name: beatbot
 channels:
   - pytorch
   - conda-forge
 dependencies:
-  - appnope=0.1.3=pyhd8ed1ab_0
-  - asttokens=2.4.1=pyhd8ed1ab_0
-  - brotli=1.1.0=hb547adb_1
-  - brotli-bin=1.1.0=hb547adb_1
-  - bzip2=1.0.8=h93a5062_5
-  - ca-certificates=2023.11.17=hf0a4a13_0
-  - certifi=2023.11.17=pyhd8ed1ab_0
-  - comm=0.2.1=pyhd8ed1ab_0
-  - contourpy=1.2.0=py311hd03642b_0
-  - cycler=0.12.1=pyhd8ed1ab_0
-  - debugpy=1.8.0=py311ha891d26_1
-  - decorator=5.1.1=pyhd8ed1ab_0
-  - exceptiongroup=1.2.0=pyhd8ed1ab_0
-  - executing=2.0.1=pyhd8ed1ab_0
-  - filelock=3.13.1=pyhd8ed1ab_0
-  - fonttools=4.47.0=py311h05b510d_0
-  - freetype=2.12.1=hadb7bae_2
-  - gmp=6.3.0=h965bd2d_0
-  - gmpy2=2.1.2=py311h2ba9262_1
-  - importlib-metadata=7.0.1=pyha770c72_0
-  - importlib_metadata=7.0.1=hd8ed1ab_0
-  - ipykernel=6.28.0=pyh3cd1d5f_0
-  - ipython=8.19.0=pyh707e725_0
-  - jedi=0.19.1=pyhd8ed1ab_0
-  - jinja2=3.1.2=pyhd8ed1ab_1
-  - joblib=1.3.2=pyhd8ed1ab_0
-  - jupyter_client=8.6.0=pyhd8ed1ab_0
-  - jupyter_core=5.7.0=py311h267d04e_0
-  - kiwisolver=1.4.5=py311he4fd1f5_1
-  - lcms2=2.16=ha0e7c42_0
-  - lerc=4.0.0=h9a09cb3_0
-  - libblas=3.9.0=20_osxarm64_openblas
-  - libbrotlicommon=1.1.0=hb547adb_1
-  - libbrotlidec=1.1.0=hb547adb_1
-  - libbrotlienc=1.1.0=hb547adb_1
-  - libcblas=3.9.0=20_osxarm64_openblas
-  - libcxx=16.0.6=h4653b0c_0
-  - libdeflate=1.19=hb547adb_0
-  - libexpat=2.5.0=hb7217d7_1
-  - libffi=3.4.2=h3422bc3_5
-  - libgfortran=5.0.0=13_2_0_hd922786_1
-  - libgfortran5=13.2.0=hf226fd6_1
-  - libjpeg-turbo=3.0.0=hb547adb_1
-  - liblapack=3.9.0=20_osxarm64_openblas
-  - libopenblas=0.3.25=openmp_h6c19121_0
-  - libpng=1.6.39=h76d750c_0
-  - libsodium=1.0.18=h27ca646_1
-  - libsqlite=3.44.2=h091b4b1_0
-  - libtiff=4.6.0=ha8a6c65_2
-  - libwebp-base=1.3.2=hb547adb_0
-  - libxcb=1.15=hf346824_0
-  - libzlib=1.2.13=h53f4e23_5
-  - llvm-openmp=17.0.6=hcd81f8e_0
-  - markupsafe=2.1.3=py311heffc1b2_1
   - matplotlib=3.8.2=py311ha1ab1f8_0
-  - matplotlib-base=3.8.2=py311hfdba5f6_0
-  - matplotlib-inline=0.1.6=pyhd8ed1ab_0
-  - mpc=1.3.1=h91ba8db_0
-  - mpfr=4.2.1=h9546428_0
-  - mpmath=1.3.0=pyhd8ed1ab_0
-  - munkres=1.1.4=pyh9f0ad1d_0
-  - ncurses=6.4=h463b476_2
-  - nest-asyncio=1.5.8=pyhd8ed1ab_0
-  - networkx=3.2.1=pyhd8ed1ab_0
   - numpy=1.26.3=py311h7125741_0
-  - openjpeg=2.5.0=h4c1507b_3
-  - openssl=3.2.0=h0d3ecfb_1
-  - packaging=23.2=pyhd8ed1ab_0
-  - parso=0.8.3=pyhd8ed1ab_0
-  - pexpect=4.8.0=pyh1a96a4e_2
-  - pickleshare=0.7.5=py_1003
-  - pillow=10.2.0=py311hb9c5795_0
   - pip=23.3.2=pyhd8ed1ab_0
-  - platformdirs=4.1.0=pyhd8ed1ab_0
-  - prompt-toolkit=3.0.42=pyha770c72_0
-  - psutil=5.9.7=py311h05b510d_0
-  - pthread-stubs=0.4=h27ca646_1001
-  - ptyprocess=0.7.0=pyhd3deb0d_0
-  - pure_eval=0.2.2=pyhd8ed1ab_0
-  - pygments=2.17.2=pyhd8ed1ab_0
-  - pyparsing=3.1.1=pyhd8ed1ab_0
   - python=3.11.7=hdf0ec26_1_cpython
-  - python-dateutil=2.8.2=pyhd8ed1ab_0
-  - python_abi=3.11=4_cp311
   - pytorch=2.1.2=py3.11_0
-  - pyyaml=6.0.1=py311heffc1b2_1
-  - pyzmq=25.1.2=py311h6727e71_0
-  - readline=8.2=h92ec313_1
   - scikit-learn=1.3.2=py311ha25ca4d_2
-  - scipy=1.11.4=py311h2b215a9_0
-  - setuptools=69.0.3=pyhd8ed1ab_0
-  - six=1.16.0=pyh6c4a22f_0
-  - stack_data=0.6.2=pyhd8ed1ab_0
-  - sympy=1.12=pypyh9d50eac_103
-  - threadpoolctl=3.2.0=pyha21a80b_0
-  - tk=8.6.13=h5083fa2_1
   - torchaudio=2.1.2=py311_cpu
-  - tornado=6.3.3=py311heffc1b2_1
-  - traitlets=5.14.1=pyhd8ed1ab_0
-  - typing_extensions=4.9.0=pyha770c72_0
-  - tzdata=2023d=h0c530f3_0
-  - wcwidth=0.2.12=pyhd8ed1ab_0
-  - wheel=0.42.0=pyhd8ed1ab_0
-  - xorg-libxau=1.0.11=hb547adb_0
-  - xorg-libxdmcp=1.1.3=h27ca646_0
-  - xz=5.2.6=h57fd34a_0
-  - yaml=0.2.5=h3422bc3_2
-  - zeromq=4.3.5=h965bd2d_0
-  - zipp=3.17.0=pyhd8ed1ab_0
-  - zstd=1.5.5=h4f39d0f_0
+  # - ipykernel=6.28.0=pyh3cd1d5f_0  # optional, for jupyter notebooks
   - pip:
-      - cffi==1.16.0
-      - mouseinfo==0.1.3
       - pyautogui==0.9.54
-      - pycparser==2.21
-      - pygetwindow==0.0.9
-      - pymsgbox==1.0.9
-      - pyobjc-core==10.1
-      - pyobjc-framework-cocoa==10.1
-      - pyobjc-framework-quartz==10.1
-      - pyperclip==1.8.2
-      - pyrect==0.2.0
-      - pyscreeze==0.1.30
-      - pytweening==1.0.7
-      - rubicon-objc==0.4.7
       - sounddevice==0.4.6
+
+
+# full environment
+
+# name: beatbot
+# channels:
+#   - pytorch
+#   - conda-forge
+# dependencies:
+#   - brotli=1.1.0=hb547adb_1
+#   - brotli-bin=1.1.0=hb547adb_1
+#   - bzip2=1.0.8=h93a5062_5
+#   - ca-certificates=2023.11.17=hf0a4a13_0
+#   - certifi=2023.11.17=pyhd8ed1ab_0
+#   - contourpy=1.2.0=py311hd03642b_0
+#   - cycler=0.12.1=pyhd8ed1ab_0
+#   - filelock=3.13.1=pyhd8ed1ab_0
+#   - fonttools=4.47.0=py311h05b510d_0
+#   - freetype=2.12.1=hadb7bae_2
+#   - gmp=6.3.0=h965bd2d_0
+#   - gmpy2=2.1.2=py311h2ba9262_1
+#   - jinja2=3.1.2=pyhd8ed1ab_1
+#   - joblib=1.3.2=pyhd8ed1ab_0
+#   - kiwisolver=1.4.5=py311he4fd1f5_1
+#   - lcms2=2.16=ha0e7c42_0
+#   - lerc=4.0.0=h9a09cb3_0
+#   - libblas=3.9.0=20_osxarm64_openblas
+#   - libbrotlicommon=1.1.0=hb547adb_1
+#   - libbrotlidec=1.1.0=hb547adb_1
+#   - libbrotlienc=1.1.0=hb547adb_1
+#   - libcblas=3.9.0=20_osxarm64_openblas
+#   - libcxx=16.0.6=h4653b0c_0
+#   - libdeflate=1.19=hb547adb_0
+#   - libexpat=2.5.0=hb7217d7_1
+#   - libffi=3.4.2=h3422bc3_5
+#   - libgfortran=5.0.0=13_2_0_hd922786_1
+#   - libgfortran5=13.2.0=hf226fd6_1
+#   - libjpeg-turbo=3.0.0=hb547adb_1
+#   - liblapack=3.9.0=20_osxarm64_openblas
+#   - libopenblas=0.3.25=openmp_h6c19121_0
+#   - libpng=1.6.39=h76d750c_0
+#   - libsqlite=3.44.2=h091b4b1_0
+#   - libtiff=4.6.0=ha8a6c65_2
+#   - libwebp-base=1.3.2=hb547adb_0
+#   - libxcb=1.15=hf346824_0
+#   - libzlib=1.2.13=h53f4e23_5
+#   - llvm-openmp=17.0.6=hcd81f8e_0
+#   - markupsafe=2.1.3=py311heffc1b2_1
+#   - matplotlib=3.8.2=py311ha1ab1f8_0
+#   - matplotlib-base=3.8.2=py311hfdba5f6_0
+#   - mpc=1.3.1=h91ba8db_0
+#   - mpfr=4.2.1=h9546428_0
+#   - mpmath=1.3.0=pyhd8ed1ab_0
+#   - munkres=1.1.4=pyh9f0ad1d_0
+#   - ncurses=6.4=h463b476_2
+#   - networkx=3.2.1=pyhd8ed1ab_0
+#   - numpy=1.26.3=py311h7125741_0
+#   - openjpeg=2.5.0=h4c1507b_3
+#   - openssl=3.2.0=h0d3ecfb_1
+#   - packaging=23.2=pyhd8ed1ab_0
+#   - pillow=10.2.0=py311hb9c5795_0
+#   - pip=23.3.2=pyhd8ed1ab_0
+#   - pthread-stubs=0.4=h27ca646_1001
+#   - pyparsing=3.1.1=pyhd8ed1ab_0
+#   - python=3.11.7=hdf0ec26_1_cpython
+#   - python-dateutil=2.8.2=pyhd8ed1ab_0
+#   - python_abi=3.11=4_cp311
+#   - pytorch=2.1.2=py3.11_0
+#   - pyyaml=6.0.1=py311heffc1b2_1
+#   - readline=8.2=h92ec313_1
+#   - scikit-learn=1.3.2=py311ha25ca4d_2
+#   - scipy=1.11.4=py311h2b215a9_0
+#   - setuptools=69.0.3=pyhd8ed1ab_0
+#   - six=1.16.0=pyh6c4a22f_0
+#   - sympy=1.12=pypyh9d50eac_103
+#   - threadpoolctl=3.2.0=pyha21a80b_0
+#   - tk=8.6.13=h5083fa2_1
+#   - torchaudio=2.1.2=py311_cpu
+#   - tornado=6.3.3=py311heffc1b2_1
+#   - typing_extensions=4.9.0=pyha770c72_0
+#   - tzdata=2023d=h0c530f3_0
+#   - wheel=0.42.0=pyhd8ed1ab_0
+#   - xorg-libxau=1.0.11=hb547adb_0
+#   - xorg-libxdmcp=1.1.3=h27ca646_0
+#   - xz=5.2.6=h57fd34a_0
+#   - yaml=0.2.5=h3422bc3_2
+#   - zstd=1.5.5=h4f39d0f_0
+#   - pip:
+#       - cffi==1.16.0
+#       - mouseinfo==0.1.3
+#       - pyautogui==0.9.54
+#       - pycparser==2.21
+#       - pygetwindow==0.0.9
+#       - pymsgbox==1.0.9
+#       - pyobjc-core==10.1
+#       - pyobjc-framework-cocoa==10.1
+#       - pyobjc-framework-quartz==10.1
+#       - pyperclip==1.8.2
+#       - pyrect==0.2.0
+#       - pyscreeze==0.1.30
+#       - pytweening==1.0.7
+#       - rubicon-objc==0.4.7
+#       - sounddevice==0.4.6
