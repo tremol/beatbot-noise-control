@@ -13,6 +13,7 @@ from src.audio.save_load import load_noise_sample_dict
 from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
 from src.model.define_model import Net
 from src.model.train_model import train_net
+from src.model.evaluate_model import accuracy_rating, plot_confusion_matrix
 
 if __name__ == "__main__":
 
@@ -43,7 +44,7 @@ if __name__ == "__main__":
         ax[i].imshow(my_spectrograms[i][0].numpy())
     print(' '.join('{:>4s}'.format(
         my_dataset.noise_int_to_str[my_labels[j].item()]) for j in range(my_batch_size)))
-    # plt.show()
+    # plt.show()    # uncomment to see sample training spectrograms
 
     # model/define_model.py
 
@@ -54,3 +55,10 @@ if __name__ == "__main__":
     # model/train_model.py
 
     train_net(my_net, 20, my_train_loader, batch_progress=100)
+
+    # model/evaluate_model.py
+
+    accuracy_rating(my_net, my_train_loader, 'training')
+    preds, targets = accuracy_rating(my_net, my_test_loader, 'test')
+
+    plot_confusion_matrix(preds, targets, my_dataset.noise_int_to_str)

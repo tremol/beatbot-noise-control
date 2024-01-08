@@ -1,7 +1,14 @@
 # Evaluate model quality
 # Check the accuracy of the model against the testing and training sets, and compute the confusion matrix.
+
+# plot_confusion_matrix adapted from
+# https://deeplizard.com/learn/video/0LhiS6yu2qQ (used to be freely available)
+
 import itertools
 from sklearn.metrics import confusion_matrix
+import torch
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def accuracy_rating(net, dataloader, dataset_label):
@@ -29,7 +36,6 @@ def accuracy_rating(net, dataloader, dataset_label):
         100 * correct / total))
 
     return all_predictions, all_targets
-# adapted from https://deeplizard.com/learn/video/0LhiS6yu2qQ
 
 
 def plot_confusion_matrix(predictions, targets, labels_int_to_str,
@@ -73,8 +79,10 @@ def plot_confusion_matrix(predictions, targets, labels_int_to_str,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    plt.show()
 
     return confusion_matrix
+
 # # TESTING
 # accuracy_rating(my_net, my_train_loader, 'training')
 # preds, targets = accuracy_rating(my_net, my_test_loader, 'test')
