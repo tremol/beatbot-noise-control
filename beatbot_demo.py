@@ -1,5 +1,5 @@
 from src.audio.device_settings import prompt_device_selection
-from src.audio.save_load import load_noise_sample_dict
+from src.audio.save_load import load_noise_samples
 from src.main.build_run_beatbot import build_beatbot, run_beatbot
 from src.response.print_noise import print_noise
 
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # my_recordings = {}
 
     # Alternatively, start by loading a file to build on previous recordings
-    my_recordings = load_noise_sample_dict('demo_recordings.npy')
+    my_recordings = load_noise_samples('demo_recordings.npy')
 
     # Record noises and train a model. Set skip_testing_model to True to use
     # 100% of samples for training instead of 80%. Try recording just a few

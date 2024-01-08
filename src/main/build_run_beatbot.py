@@ -10,7 +10,7 @@ from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
 from src.model.define_model import Net
 from src.model.train_model import train_net
 from src.model.evaluate_model import accuracy_rating, plot_confusion_matrix
-from src.audio.save_load import save_noise_sample_dict
+from src.audio.save_load import save_noise_samples
 from src.model.save_load import save_model
 
 
@@ -62,7 +62,7 @@ def build_beatbot(device, starting_noise_data={},
 
     # Offer to save the recordings and model
     print('\nWould you like to save your audio data?')
-    save_noise_sample_dict(
+    save_noise_samples(
         noise_data_dict, filename=save_recordings_filename, rewrite=rewrite_recordings_file)
     print('\nWould you like to save your model?')
     save_model(model, filename=save_model_filename, rewrite=rewrite_model_file)

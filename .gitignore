@@ -136,12 +136,12 @@ dmypy.json
 .pytype/
 
 # testing outputs
-output/saved_noise_sample_dictionaries/demo_recordings.npy
+output/saved_noise_samples/demo_recordings.npy
 output/trained_models/demo_model.npy
 output/trained_models/demo_model.pth
-output/saved_noise_sample_dictionaries/my_recordings.npy
+output/saved_noise_samples/my_recordings.npy
 output/trained_models/my_model.npy
 output/trained_models/my_model.pth
-output/saved_noise_sample_dictionaries/my_test_recordings.npy
+output/saved_noise_samples/my_test_recordings.npy
 output/trained_models/my_test_model.npy
 output/trained_models/my_test_model.pth

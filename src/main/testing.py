@@ -10,7 +10,7 @@ sys.path.insert(0, os.getcwd())
 from src.main.build_run_beatbot import build_beatbot, run_beatbot
 from src.main.listen_and_recognize import listen_recognize_and_respond
 from src.model.save_load import save_model, load_model
-from src.audio.save_load import load_noise_sample_dict
+from src.audio.save_load import load_noise_samples
 from src.audio.device_settings import prompt_device_selection, get_samplerate
 from src.response.print_noise import print_noise
 from src.response.keyboard_control import press_key
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # model/build_run_beatbot.py
 
     # load if we've previously made some test recordings
-    my_recordings = load_noise_sample_dict('my_test_recordings.npy') or {}
+    my_recordings = load_noise_samples('my_test_recordings.npy') or {}
     my_model, my_recordings = build_beatbot(device,
                                             starting_noise_data=my_recordings,
                                             skip_recording=False,

@@ -9,7 +9,7 @@ sys.path.insert(0, os.getcwd())
 
 from src.audio.device_settings import prompt_device_selection, get_samplerate
 from src.audio.make_spectrograms import generate_spectrogram
-from src.audio.save_load import load_noise_sample_dict
+from src.audio.save_load import load_noise_samples
 from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
 from src.model.define_model import Net
 from src.model.train_model import train_net
@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     import matplotlib.pyplot as plt
 
-    my_recordings = load_noise_sample_dict(
+    my_recordings = load_noise_samples(
         filename='necrodancer_100each_t-k-p-tsk-cluck.npy')
     my_dataset = NoisesDataset(my_recordings, samplerate)
     my_train_loader, my_test_loader, my_train_dataset, my_test_dataset = prepare_even_data_loaders(

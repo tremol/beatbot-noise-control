@@ -4,10 +4,10 @@ from src.utils.save_load import save_file, load_file
 import numpy as np
 
 # Save or load noise sample dictionaries, with audio data:
-DICT_BASEPATH = 'output/saved_noise_sample_dictionaries/'
+DICT_BASEPATH = 'output/saved_noise_samples/'
 
 
-def save_noise_sample_dict(noise_data_dict, filename=None, rewrite=False, basepath=DICT_BASEPATH):
+def save_noise_samples(noise_data_dict, filename=None, rewrite=False, basepath=DICT_BASEPATH):
     """ Save the dictionary of noise sample recordings """
 
     def save_function(data, path):
@@ -17,7 +17,7 @@ def save_noise_sample_dict(noise_data_dict, filename=None, rewrite=False, basepa
                      basepath=basepath, extension=".npy", save_function=save_function)
 
 
-def load_noise_sample_dict(filename=None, basepath=DICT_BASEPATH):
+def load_noise_samples(filename=None, basepath=DICT_BASEPATH):
     """ Load a dictionary of noise sample recordings """
 
     def load_function(path):
@@ -26,6 +26,6 @@ def load_noise_sample_dict(filename=None, basepath=DICT_BASEPATH):
     return load_file(filename=filename, basepath=basepath, load_function=load_function)
 
 # # TESTING
-# save_noise_sample_dict(my_recordings)
-# my_loaded_file = load_noise_sample_dict(filename='my_recordings.npy')
+# save_noise_samples(my_recordings)
+# my_loaded_file = load_noise_samples(filename='my_recordings.npy')
 # my_loaded_file

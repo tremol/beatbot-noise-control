@@ -10,7 +10,7 @@ sys.path.insert(0, os.getcwd())
 from src.audio.device_settings import prompt_device_selection
 from src.audio.record import record_model_data
 from src.audio.make_spectrograms import generate_spectrogram
-from src.audio.save_load import save_noise_sample_dict, load_noise_sample_dict
+from src.audio.save_load import save_noise_samples, load_noise_samples
 import time
 
 if __name__ == "__main__":
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     # audio/save_load.py
 
-    save_noise_sample_dict(my_recordings, filename='my_recordings.npy', rewrite=True)
+    save_noise_samples(my_recordings, filename='my_recordings.npy', rewrite=True)
     time.sleep(0.5)
-    my_loaded_file = load_noise_sample_dict(filename='my_recordings.npy')
+    my_loaded_file = load_noise_samples(filename='my_recordings.npy')
     print(my_loaded_file)
