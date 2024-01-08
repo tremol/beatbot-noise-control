@@ -12,6 +12,7 @@ from src.audio.make_spectrograms import generate_spectrogram
 from src.audio.save_load import load_noise_sample_dict
 from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
 from src.model.define_model import Net
+from src.model.train_model import train_net
 
 if __name__ == "__main__":
 
@@ -49,3 +50,7 @@ if __name__ == "__main__":
     image_size = my_spectrograms[0].size()
     my_net = Net(image_size, my_dataset.noise_int_to_str)
     print(my_net)
+
+    # model/train_model.py
+
+    train_net(my_net, 20, my_train_loader, batch_progress=100)
