@@ -1,3 +1,12 @@
+# --------- Pretend we're in the root directory ---------
+import sys
+import os
+
+ROOT_DIR = '../..'
+os.chdir(ROOT_DIR)
+sys.path.insert(0, os.getcwd())
+# -------------------------------------------------------
+
 from src.audio.device_settings import prompt_device_selection, get_samplerate
 from src.audio.make_spectrograms import generate_spectrogram
 from src.audio.save_load import load_noise_sample_dict
