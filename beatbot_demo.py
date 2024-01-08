@@ -10,11 +10,8 @@ if __name__ == "__main__":
     # First select your microphone.
     device = prompt_device_selection()
 
-    # Start fresh if you don't have any recordings yet.
-    # my_recordings = {}
-
-    # Alternatively, start by loading a file to build on previous recordings
-    my_recordings = load_noise_samples('demo_recordings.npy')
+    # Load a file to build on previous recordings, or start fresh if you don't have any.
+    my_recordings = load_noise_samples('demo_recordings.npy') or {}
 
     # Record noises and train a model. Set skip_testing_model to True to use
     # 100% of samples for training instead of 80%. Try recording just a few
