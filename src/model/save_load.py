@@ -3,7 +3,12 @@
 # dictionary needed to instantiate the model. These are done in tandem, so that
 # loading a model automatically returns the fully restored model.
 
-MODEL_BASEPATH = 'trained_models/'
+from src.utils.save_load import save_file, load_file
+from src.model.define_model import Net
+import numpy as np
+import torch
+
+MODEL_BASEPATH = 'output/trained_models/'
 
 
 def get_paired_filenames(filename):
@@ -30,7 +35,7 @@ def save_model(model, filename=None, rewrite=False, basepath=MODEL_BASEPATH):
         torch.save(data.state_dict(), path)
 
     def save_function_init(data, path):
-        np.save(path, (data.image_size, data.noise_int_to_str))
+        np.save(path, np.array([data.image_size, data.noise_int_to_str], dtype=object))
 
     # save the neural net parameters
     print('Saving the model parameters (.pth) ...')
@@ -94,6 +99,7 @@ def load_model(filename=None, basepath=MODEL_BASEPATH):
     model.load_state_dict(state_dict)
 
     return model
+
 # # TESTING
 # save_model(my_net, filename='my_model')
 # # TESTING
