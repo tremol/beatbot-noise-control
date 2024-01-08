@@ -1,8 +1,24 @@
 # From recording to recognizing: all together
-# Here we define two functions:
+# Here we define the two main functions:
 # * `build_beatbot` to record training audio + train the model + evaluate the model, and
 # * `run_beatbot` to continuously listen + recognize noises + act on them.
-def build_beatbot(device=device, starting_noise_data={},
+
+from src.main.listen_and_recognize import listen_recognize_and_respond
+from src.audio.device_settings import get_samplerate
+from src.audio.record import record_model_data
+from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
+from src.model.define_model import Net
+from src.model.train_model import train_net
+from src.model.evaluate_model import accuracy_rating, plot_confusion_matrix
+from src.audio.save_load import save_noise_sample_dict
+from src.model.save_load import save_model
+
+
+# Currently `run_beatbot` is just an alias to `listen_recognize_and_respond`
+run_beatbot = listen_recognize_and_respond
+
+
+def build_beatbot(device, starting_noise_data={},
                   skip_recording=False,
                   batch_size=8, epochs=10, batch_progress=100,
                   skip_testing_model=False,
@@ -17,15 +33,19 @@ def build_beatbot(device=device, starting_noise_data={},
     else:
         noise_data_dict = record_model_data(
             device=device, starting_noise_data=starting_noise_data)
+    
+    print('Building model from recordings ...')
 
-    dataset = NoisesDataset(noise_data_dict)
+    samplerate = get_samplerate(device)
+
+    dataset = NoisesDataset(noise_data_dict, samplerate)
 
     # Prepare the dataloader. Use all data as training data if skip_testing_model is True.
     if skip_testing_model:
         training_fraction = 1
     else:
         training_fraction = 0.8
-    train_loader, test_loader, _, _ = prepare_even_data_loaders(dataset, batch_size=batch_size,
+    train_loader, test_loader, _, _ = prepare_even_data_loaders(dataset, samplerate, batch_size=batch_size,
                                                                 training_fraction=training_fraction)
 
     # Build and train the neural net
@@ -49,8 +69,6 @@ def build_beatbot(device=device, starting_noise_data={},
 
 
 # # TESTING
-# my_model, my_recordings = build_beatbot(device=2, starting_noise_data=my_recordings)
-# Currently `run_beatbot` is just an alias to `listen_recognize_and_respond`, from earlier
-run_beatbot = listen_recognize_and_respond
+# my_model, my_recordings = build_beatbot(device=0, starting_noise_data=my_recordings)
 # # TESTING
 # listen_recognize_and_respond(my_model, print_noise, device=0, duration=20)
