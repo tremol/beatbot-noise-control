@@ -14,9 +14,11 @@ from src.audio.save_load import save_noise_sample_dict
 from src.model.save_load import save_model
 
 
-# Currently `run_beatbot` is just an alias to `listen_recognize_and_respond`
-run_beatbot = listen_recognize_and_respond
-
+def run_beatbot(model, act_on_noise, device, duration):
+    noises = ', '.join(list(model.noise_int_to_str.values()))
+    print(f'This model recognizes the noises: {noises}')
+    
+    listen_recognize_and_respond(model, act_on_noise, device, duration)
 
 def build_beatbot(device, starting_noise_data={},
                   skip_recording=False,
