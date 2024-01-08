@@ -1,5 +1,9 @@
 # Train the convolutional neural network.
 
+# Some of the model construction, training, and evaluation code here has
+# been adapted from a [pytorch
+# tutorial](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).
+
 import torch.nn as nn
 import torch.optim as optim
 
@@ -42,6 +46,7 @@ def train_net(net, epochs, train_loader, batch_progress=50):
             batch_num += 1
         
     print('Finished Training')
+
 # # TESTING
 # my_net = Net(my_spectrogram.size(), my_dataset.noise_int_to_str)
 # train_net(my_net, 50, my_train_loader, batch_progress=100)

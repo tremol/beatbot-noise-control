@@ -1,5 +1,9 @@
 # Define the convolutional neural network that we will train and use for noise recognition.
 
+# Some of the model construction, training, and evaluation code here has
+# been adapted from a [pytorch
+# tutorial](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).
+
 import torch.nn as nn
 import torch.nn.functional as F
 
