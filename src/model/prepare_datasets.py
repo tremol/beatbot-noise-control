@@ -1,8 +1,11 @@
 # Neural net: preparing datasets From a dictionary of labeled noise sample
 # recordings, prepare the datasets and data loaders needed to train and test the
-# model. Some of the model construction, training, and evaluation code here has
-# been adapted from a [pytorch
+# model. 
+
+# Some of the model construction, training, and evaluation code here has been
+# adapted from a [pytorch
 # tutorial](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).
+
 # Data loaders partly adapted from
 # https://stackoverflow.com/questions/53916594/typeerror-object-of-type-numpy-int64-has-no-len
 
