@@ -68,7 +68,7 @@ def record_model_data(device, starting_noise_data={}):
 
         # clear_output()  # clear jupyter output
         print_progress(noise_data_dict)
-        time.sleep(0.5)  # avoid catching noise from keyboard
+        time.sleep(2)  # avoid noise from keyboard and related body movements
         print('Please start recording.\n')
         print('"{}" noises recorded (out of {}): '.format(label, num))
         noise_count = 0
