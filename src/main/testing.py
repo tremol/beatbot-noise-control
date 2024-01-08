@@ -24,12 +24,13 @@ if __name__ == "__main__":
 
     # model/listen_and_recognize.py
 
-    my_model = load_model(filename='my_test_recordings')
-    listen_recognize_and_respond(my_model, print_noise, device=0, duration=5)
+    # my_model = load_model(filename='my_test_model')
+    # listen_recognize_and_respond(my_model, print_noise, device, duration=5)
 
     # model/build_run_beatbot.py
 
-    my_recordings = load_noise_sample_dict('my_test_recordings.npy')
+    # load if we've previously made some test recordings
+    my_recordings = load_noise_sample_dict('my_test_recordings.npy') or {}
     my_model, my_recordings = build_beatbot(device,
                                             starting_noise_data=my_recordings,
                                             skip_recording=False,
@@ -39,9 +40,9 @@ if __name__ == "__main__":
                                             rewrite_model_file=True)
 
     # print the noises heard
-    my_model = load_model('my_test_recordings')
-    run_beatbot(my_model, print_noise, device, duration=10)
+    my_model = load_model('my_test_model')
+    run_beatbot(my_model, print_noise, device, duration=5)
 
     # # basic keyboard control
     # my_model = load_model('necrodancer_100each_t-k-p-tsk-cluck')
-    # run_beatbot(my_model, press_key, device, duration=120)
+    # run_beatbot(my_model, press_key, device, duration=30)

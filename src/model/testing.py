@@ -28,7 +28,7 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     my_recordings = load_noise_sample_dict(
-        filename='100each__t-p-k-ch-tsk-click.npy')
+        filename='necrodancer_100each_t-k-p-tsk-cluck.npy')
     my_dataset = NoisesDataset(my_recordings, samplerate)
     my_train_loader, my_test_loader, my_train_dataset, my_test_dataset = prepare_even_data_loaders(
         my_dataset, samplerate, batch_size=8)

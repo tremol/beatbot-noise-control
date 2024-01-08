@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     # audio/save_load.py
 
-    save_noise_sample_dict(my_recordings)  # enter filename: my_recordings
+    save_noise_sample_dict(my_recordings, filename='my_recordings.npy', rewrite=True)
     time.sleep(0.5)
     my_loaded_file = load_noise_sample_dict(filename='my_recordings.npy')
     print(my_loaded_file)
