@@ -11,6 +11,7 @@ from src.audio.device_settings import prompt_device_selection, get_samplerate
 from src.audio.make_spectrograms import generate_spectrogram
 from src.audio.save_load import load_noise_sample_dict
 from src.model.prepare_datasets import NoisesDataset, prepare_even_data_loaders
+from src.model.define_model import Net
 
 if __name__ == "__main__":
 
@@ -41,6 +42,10 @@ if __name__ == "__main__":
         ax[i].imshow(my_spectrograms[i][0].numpy())
     print(' '.join('{:>4s}'.format(
         my_dataset.noise_int_to_str[my_labels[j].item()]) for j in range(my_batch_size)))
-    plt.show()
+    # plt.show()
 
+    # model/define_model.py
 
+    image_size = my_spectrograms[0].size()
+    my_net = Net(image_size, my_dataset.noise_int_to_str)
+    print(my_net)
