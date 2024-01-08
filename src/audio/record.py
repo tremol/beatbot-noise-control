@@ -4,6 +4,7 @@
 from src.audio.listen import listen, listen_and_process
 from src.utils.input import get_nonneg_int_input
 import sys
+import time
 
 
 ########## A listener to record training/testing data. ##########
@@ -67,6 +68,7 @@ def record_model_data(device, starting_noise_data={}):
 
         # clear_output()  # clear jupyter output
         print_progress(noise_data_dict)
+        time.sleep(0.5)  # avoid catching noise from keyboard
         print('Please start recording.\n')
         print('"{}" noises recorded (out of {}): '.format(label, num))
         noise_count = 0
@@ -85,7 +87,7 @@ def record_model_data(device, starting_noise_data={}):
     return noise_data_dict
 
 
-## TESTING
+# TESTING
 
 # my_recordings = record_model_data(device=0)
 # print(my_recordings)
