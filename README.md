@@ -11,13 +11,13 @@ This was a ~week-long learning project to explore machine learning, inspired by 
 - Run `beatbot_demo.py`. It will walk you through recording, training, and trying out your model.
 
 - For a usage example, check out `beatbot_necrodancer.py`, which responds to noises by pressing up/down/left/right/escape keys.
-    - Note: It may not work well for you, since it was trained by me on my microphone, but hopefully the code will be illustrative.
+    - Note: It may not work well for you, since it was trained by me on my microphone, but hopefully the code will be illustrative. (The [tsk](https://www.youtube.com/watch?v=2BsMktG9ruw&t=16s) and [cluck](https://www.youtube.com/watch?v=4MiKHpcvI9M&t=65s) are like these.)
 
 ### Example Setup
 
 Here are two ways to set this up with a Unix/macOS terminal. I recommend using local virtual environments for good hygiene.
 
-Clone the repo. Once inside ...
+Clone/download this repo. Once inside ...
 
 Use pip to install requirements. (If you don't want to use a virtual environment, just skip the first two lines.)
 ```
@@ -42,7 +42,20 @@ I find it only takes ~50-100 samples to get a decent (not excellent) model, and 
 
 Note: The model will return a prediction for any percussive noise it hears. There is no capability to reject unfamiliar noises, so be aware of this when attaching keyboard simulation to noise recognition. A microphone with better noise rejection can help to reduce false positives, but regardless you may want to use headphones if using this while playing music or a game.
 
-### Key Dependencies
+## Code structure
+
+- `explorations (development)` - jupyter notebooks and audio files used for [development](#development-process-for-the-curious); all are non-essential now
+- `output` - saved recordings and models
+- `src` - the primary code, adapted from the `BeatBot - all together` development notebook
+    - `audio` - audio listening, recording, and processing
+    - `model` - neural network definition, training, and evaluation
+    - `main` - bringing audio and model code together to build and use models
+    - `response` - functions to respond to recognized noises, e.g., by pressing keys
+    - `utils` - misc generic functions
+    - `beatbot_demo.py` and `beatbot_necrodancer.py` - example usage, see [Getting Started](#getting-started)
+
+
+### Key dependencies
 
 [Setup](#example-setup) will install the following key dependencies:
 * `matplotlib` - for visualizing model quality (via the confusion matrix); also visualizing spectrograms in testing
@@ -55,7 +68,7 @@ Note: The model will return a prediction for any percussive noise it hears. Ther
 
 Optionally, you may need `ipykernel` to view the Jupyter notebooks. If you don't already have Jupyter, here is the [Jupyter installation guide](https://jupyter.readthedocs.io/en/latest/install.html).
 
-### Development process, for the curious
+## Development process, for the curious
 
 The jupyter notebooks (Explorations 1-3) chronicle the learning and development process behind the code. It originally came together in the "BeatBot - all together" notebook, and that's where the project stopped — you just ran that notebook. Returning to the project in early 2024, however, it no longer worked. So I extracted and updated the code to its current form.
 
