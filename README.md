@@ -4,7 +4,7 @@ The goal of this project is to build an easy-to-use and self-contained system to
 
 It can detect, learn to recognize, and respond to percussive noises (like short consonant sounds), but not longer noises (like a hisssss). My goal was just to make something that works, but even in its current state just a couple minutes of audio recording is enough to train a model decent enough to play a simple game, like *[Crypt of the Necrodancer](https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/)*.
 
-This was a ~week-long learning project to explore machine learning, inspired by other [hands-free computing projects](#acknowledgments).
+This was a ~week-long learning project in early 2020 to explore machine learning, inspired by other [hands-free computing projects](#acknowledgments). I revisited to refactor in early 2024.
 
 ## Getting Started
 
