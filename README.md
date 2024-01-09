@@ -1,49 +1,63 @@
 # BeatBot Noise Control
 
-The goal of this project is to build an accessible and self-contained system to record yourself making noises (think: beatboxing), teach your computer to recognize them, then have your computer listen for them and respond. In its present state, it can detect, learn to recognize, and respond to percussive noises (like short consonant sounds), but not longer noises (like a hisssss). There is much room for improvement, but even in its current state just a couple minutes of audio recording is enough to train a model decent enough to play *Crypt of the Necrodancer*.
+The goal of this project is to build an easy-to-use and self-contained system to record yourself making percussive noises (think: beatboxing), teach your computer to recognize them, then have your computer listen for them and respond.
+
+It can detect, learn to recognize, and respond to percussive noises (like short consonant sounds), but not longer noises (like a hisssss). My goal was just to make something that works, but even in its current state just a couple minutes of audio recording is enough to train a model decent enough to play a simple game, like *[Crypt of the Necrodancer](https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/)*.
+
+This was a ~week-long learning project to explore machine learning, inspired by other [hands-free computing projects](#acknowledgments).
 
 ## Getting Started
 
-### Just run the BeatBot notebook!
+- Run `beatbot_demo.py`. It will walk you through recording, training, and trying out your model.
 
-There is currently only one essential file:  `BeatBot - all together.ipynb`. Once you have Jupyter and the requisite Python libraries (see Prerequisites) download that file, open it, and follow instructions at the top. The prompts will guide you through recording audio data to train your own model. Once you have a model, you can use the sample code to simulate keyboard presses from noise recognitions, which is all you need to try it out on a game or other application.
+- For a usage example, check out `beatbot_necrodancer.py`, which responds to noises by pressing up/down/left/right/escape keys.
+    - Note: It may not work well for you, since it was trained by me on my microphone, but hopefully the code will be illustrative.
+
+### Example Setup
+
+Here are two ways to set this up with a Unix/macOS terminal. I recommend using local virtual environments for good hygiene.
+
+Clone the repo. Once inside ...
+
+Use pip to install requirements. (If you don't want to use a virtual environment, just skip the first two lines.)
+```
+> python3 -m venv .venv
+> source .venv/bin/activate
+> pip install -r requirements.txt
+> python beatbot_demo.py
+```
+
+Alternatively, use Conda:
+```
+> conda env create --prefix ./.env -f environment.yml
+> conda activate ./.env
+> python beatbot_demo.py
+```
 
 ### Recording Suggestions
 
 I suggest short consonant sounds like "t", "p", or "k", or other clicks or pops you can make with your lips or tongue. Quick combinations like "ps" or "tf" can also work well. 
 
-I find it only takes ~100 samples to get a decent (not excellent) model, and it takes less than a minute to record 100 samples of a noise, so you can experiment with different noises and record lots of data for training different models quickly. On the flipside, if you want to use datasets this small you'll want to record new models for different people or microphones. (A game like *Necrodancer* only needs a few buttons, however, so this only takes a few minutes start to finish.)
+I find it only takes ~50-100 samples to get a decent (not excellent) model, and it takes less than a minute to record 100 samples of a noise. So you can experiment with different noises and record lots of data for training different models quickly. Recognition quality also depends on the quality of your microphone, of course.
 
-Note: At present the model will return a prediction for any percussive noise it hears. There is no capability yet to reject unfamiliar noises, so be aware of this when attaching keyboard simulation to noise recognition. A microphone with better noise rejection can help to reduce false positives, but regardless you may want to use headphones if using this while playing music or a game.
+Note: The model will return a prediction for any percussive noise it hears. There is no capability to reject unfamiliar noises, so be aware of this when attaching keyboard simulation to noise recognition. A microphone with better noise rejection can help to reduce false positives, but regardless you may want to use headphones if using this while playing music or a game.
 
-### Prerequisites
+### Key Dependencies
 
-At present, the project is all in Jupyter notebooks, and written in Python. If you don't already have Jupyter, here is the [Jupyter installation guide](https://jupyter.readthedocs.io/en/latest/install.html).
+[Setup](#example-setup) will install the following key dependencies:
+* `matplotlib` - for visualizing model quality (via the confusion matrix); also visualizing spectrograms in testing
+* `numpy` - various processing tasks
+* `PyAutoGUI` - keyboard control
+* `scikit-learn` - computing the confusion matrix
+* `sounddevice` - getting audio input
+* `torch` - machine learning
+* `torchaudio` - making spectrograms to train models on
 
-Once you have Jupyter, you can start it by typing the command `jupyter notebook` in a terminal. It should open in your browser, at which point you can navigate to the BeatBot notebook and open it.
-
-The essential `BeatBot` notebook imports the following Python libraries:
-
-* sounddevice
-* numpy
-* queue
-* time
-* IPython
-* torch
-* torchaudio
-* matplotlib
-* itertools
-* sklearn
-* os
-* pyautogui
-
-I personally use Anaconda as a Python distribution, and was able to install everything it didn't already include via
-
-`conda install -c conda-forge LIBRARYNAME`
+Optionally, you may need `ipykernel` to view the Jupyter notebooks. If you don't already have Jupyter, here is the [Jupyter installation guide](https://jupyter.readthedocs.io/en/latest/install.html).
 
 ### Development process, for the curious
 
-The other notebooks (Explorations 1-3) chronicle the learning and development process behind the code that comes together in the BeatBot notebook. Check them out if you're interested, but they aren't necessary for the final product.
+The jupyter notebooks (Explorations 1-3) chronicle the learning and development process behind the code. It originally came together in the "BeatBot - all together" notebook, and that's where the project stopped — you just ran that notebook. Returning to the project in early 2024, however, it no longer worked. So I extracted and updated the code to its current form.
 
 ## License
 
