@@ -2,7 +2,9 @@
 
 The goal of this project is to build an easy-to-use and self-contained system to record yourself making percussive noises (think: beatboxing), teach your computer to recognize them, then have your computer listen for them and respond.
 
-It can detect, learn to recognize, and respond to percussive noises (like short consonant sounds), but not longer noises (like a hisssss). My goal was just to make something that works, but even in its current state just a couple minutes of audio recording is enough to train a model decent enough to play a simple game, like *[Crypt of the Necrodancer](https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/)*.
+It can detect, learn to recognize, and respond to percussive noises (like short consonant sounds), but not longer noises (like a hisssss).
+
+My original target was to make something that worked well enough to play the rhythm game *[Crypt of the Necrodancer](https://store.steampowered.com/app/247080/Crypt_of_the_NecroDancer/)* hands-free. With this code and a decent microphone, it takes less than 5min to record and train a model good enough for that purpose.
 
 This was a ~week-long learning project in early 2020 to explore machine learning, inspired by other [hands-free computing projects](#acknowledgments). I revisited to refactor in early 2024.
 
@@ -38,7 +40,7 @@ Alternatively, use Conda:
 
 I suggest short consonant sounds like "t", "p", or "k", or other clicks or pops you can make with your lips or tongue. Quick combinations like "ps" or "tf" can also work well. 
 
-I find it only takes ~50-100 samples to get a decent (not excellent) model, and it takes less than a minute to record 100 samples of a noise. So you can experiment with different noises and record lots of data for training different models quickly. Recognition quality also depends on the quality of your microphone, of course.
+I find it only takes ~50-100 samples to get a decent (not excellent) model, and it takes less than a minute to record 100 samples of a noise. So you can experiment with different noises and record lots of data for training different models quickly. Recognition quality depends heavily on the quality of your microphone, but even a built-in laptop mic can work decently in a quiet environment.
 
 Note: The model will return a prediction for any percussive noise it hears. There is no capability to reject unfamiliar noises, so be aware of this when attaching keyboard simulation to noise recognition. A microphone with better noise rejection can help to reduce false positives, but regardless you may want to use headphones if using this while playing music or a game.
 
