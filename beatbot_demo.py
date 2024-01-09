@@ -27,6 +27,6 @@ if __name__ == "__main__":
                                             save_model_filename='demo_model',
                                             rewrite_model_file=True)
 
-    # Try out your new model: This will run for 10 sec, printing out any noise it
-    # hears during that time.
-    run_beatbot(my_model, print_noise, device, duration=10)
+    # Try out the model!
+    print('Try out your new model! This will run for 15 sec and print any noise it hears.')
+    run_beatbot(my_model, print_noise, device, duration=15)
