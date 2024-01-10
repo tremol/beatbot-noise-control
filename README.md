@@ -11,6 +11,7 @@ This was a ~week-long learning project in early 2020 to explore machine learning
 ## Getting Started
 
 - Run `beatbot_demo.py`. It will walk you through recording, training, and trying out your model.
+    - Known issue: I've found the mic on my wireless headphones causes a crash. This may be because of their lower sample rate, but I haven't investigated properly. Other mics and my built-in laptop mic work properly.
 
 - For a usage example, check out `beatbot_necrodancer.py`, which responds to noises by pressing up/down/left/right/escape keys.
     - Note: It may not work well for you, since it was trained by me on my microphone, but hopefully the code will be illustrative. (The [tsk](https://www.youtube.com/watch?v=2BsMktG9ruw&t=16s) and [cluck](https://www.youtube.com/watch?v=4MiKHpcvI9M&t=65s) are like these.)
